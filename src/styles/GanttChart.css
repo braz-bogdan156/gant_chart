@@ -1,0 +1,70 @@
+.gantt-chart {
+    display: grid;
+    grid-template-columns: 2fr 3fr; /* Левая колонка для таблицы, правая для диаграммы */
+    gap: 20px; /* Задаём расстояние между таблицей и графиками */
+    padding: 10px;
+  }
+  
+  .gantt-left {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr; /* Разметка для колонок: ID, Name, Estimate, Actual */
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .gantt-right {
+    display: grid;
+    grid-auto-rows: min-content; /* Каждая строка диаграммы будет иметь свою высоту */
+    gap: 10px; /* Между полосами */
+    padding: 10px;
+  }
+  .gantt-timeline{
+    display: grid;
+  }
+  .gantt-timeline-header{
+    display: grid;
+    grid-template-columns: 1fr 6fr 4fr;
+  }
+  .gantt-Q{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 3fr 3fr;
+  }
+  .gantt-timeline-months{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 5px;
+  }
+  
+  .gantt-header {
+    display: contents; /* Применяем для выравнивания заголовков по сетке */
+    font-weight: bold;
+    background-color: #f1f1f1;
+  }
+  
+  .gantt-row {
+    display: contents; /* Каждая строка данных будет занимать свою сетку */
+  }
+  
+  .gantt-row div {
+    padding: 8px;
+    border-bottom: 1px solid #ccc; /* Разделитель для строк */
+  }
+  
+  .gantt-bar-container {
+    display: flex; 
+    flex-direction: column;
+  }
+  
+  .gantt-bar {
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .gantt-bar.estimate {
+    background-color: #1f77b4;
+  }
+  
+  .gantt-bar.actual {
+    background-color: #ff7f0e;
+    height: 50%;
+  }
