@@ -1,0 +1,8 @@
+{
+  "ganttChart": {
+    "headerId": "ID",
+    "headerName": "Name",
+    "headerEstimateDuration": "Estimate Duration - H",
+    "headerActualDuration": "Actual Duration - H"
+  }
+}

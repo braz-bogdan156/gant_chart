@@ -12,27 +12,34 @@
     padding: 10px;
   }
   
+  .gantt-right-container {
+    overflow-x: auto; /* Додаємо горизонтальний скролл */
+  }
+
   .gantt-right {
     display: grid;
     grid-auto-rows: min-content; /* Каждая строка диаграммы будет иметь свою высоту */
     gap: 10px; /* Между полосами */
     padding: 10px;
+    min-width: 1200px; /* Задаємо мінімальну ширину для горизонтального скролу */
   }
-  .gantt-timeline{
-    display: grid;
-  }
+
+  
   .gantt-timeline-header{
     display: grid;
-    grid-template-columns: 1fr 6fr 4fr;
+    
+  }
+  .gantt-timeline-years{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 2fr 1fr 1fr;
   }
   .gantt-Q{
-    display: grid;
-    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 3fr 3fr;
+   display: grid;
+   grid-template-columns: repeat(14, 1fr)
   }
   .gantt-timeline-months{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 5px;
+    display: flex;
+    justify-content: space-between;
   }
   
   .gantt-header {

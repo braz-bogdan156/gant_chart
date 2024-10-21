@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import GanttChart from './components/GanttСhart';
+import GanttChart from './components/GanttChart/GanttСhart';
+import { tasks } from './components/GanttChart/types/mock-data';
 
 function App() {
+  
+  
   return (
     <div className="App">
-     <GanttChart></GanttChart>
+     <GanttChart tasks={tasks}></GanttChart>
     </div>
   );
 }
