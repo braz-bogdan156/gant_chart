@@ -42,7 +42,7 @@ const GanttChart: React.FC<Props> = ({ tasks }) => {
 
     return (
         <div className="gantt-chart">
-            {/* <GantHeader startDate={startDate} endDate={endDate}></GantHeader> */}
+            <GantHeader startDate={startDate} endDate={endDate}></GantHeader>
             {tasks.map(task => (
                 <>
                     {tasks.map((task) => renderTask(task, startDate, endDate))}

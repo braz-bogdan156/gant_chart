@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Task } from '../types/types';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import GanttGhartLeft from './GanttGhartLeft';
-// import GanttChartRight from './GanttChartRight';
+
 import { tasks } from '../types/mock-data';
 import GantBar from './GantBar';
+import GantHeaderLeft from './GantHeaderLeft';
+import { table } from 'console';
 
 type GantLineProps ={
     task: Task;
@@ -18,23 +19,27 @@ const GantLine: React.FC<GantLineProps> = ({task, hasChildren, children}) =>{
 
     const [isExpanded, setisExpanded] = React.useState(false)
             return(
+              
+                
             <tr key={task.id} className="gantt-row" >
                 
-                <tr>
-                    <tr>
+                <td>
+                    <td>
                     <td onClick={()=>setisExpanded((prev) => !prev)}>{isExpanded ? <ChevronDown/> : <ChevronUp/>}</td>
                     <td >{task.id}</td>
-                    </tr>
+                    </td>
                 
                     <td >{task.name}</td>
                     
                 <td >{task.estimateHours}</td>
                 <td >{task.actualHours}</td>
-                </tr>
-                <tr><GantBar task={task}></GantBar>
-                </tr>
+                </td>
+                <td><GantBar task={task}></GantBar>
+                </td>
                 {isExpanded && children}
-              </tr>)
+              </tr>
+             
+              )
 }
 
 export default GantLine;
