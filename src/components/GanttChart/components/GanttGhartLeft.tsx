@@ -16,7 +16,7 @@ type GanttGhartLeftProps ={
   return (
     <table className="gantt-left" border={1} >
       <thead>
-        <GantHeaderLeft></GantHeaderLeft>
+        {/* <GantHeaderLeft></GantHeaderLeft> */}
         </thead>
         <tbody>
           <>

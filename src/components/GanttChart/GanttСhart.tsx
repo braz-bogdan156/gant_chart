@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/GanttChart.css'
 import { Task } from './types/types';
-
+import GantHeader from './components/GantHeader';
 import GantLine from './components/GantLine';
 
 type Props = {

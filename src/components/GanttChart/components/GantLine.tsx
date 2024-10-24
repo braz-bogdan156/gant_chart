@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Task } from '../types/types';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import GanttGhartLeft from './GanttGhartLeft';
-import GanttChartRight from './GanttChartRight';
+// import GanttChartRight from './GanttChartRight';
 import { tasks } from '../types/mock-data';
 import GantBar from './GantBar';
 

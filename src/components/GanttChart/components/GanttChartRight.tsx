@@ -9,17 +9,17 @@ type GanttChartRightProps = {
   endDate: Date;
 };
 
-const GanttChartRight: React.FC<GanttChartRightProps> = ({ tasks }) => {
-  return (
-    <div className="gantt-right-container"> {/* Додано контейнер для горизонтального скролу */}
-      <div className="gantt-right">
-        <GantHeaderRight></GantHeaderRight>
-        {tasks.map(task => (
-          <GantBar task={task}></GantBar>
-        ))}
-      </div>
-    </div>
-  );
-};
+// const GanttChartRight: React.FC<GanttChartRightProps> = ({ tasks }) => {
+//   return (
+//     <div className="gantt-right-container"> {/* Додано контейнер для горизонтального скролу */}
+//       <div className="gantt-right">
+//         <GantHeaderRight ></GantHeaderRight>
+//         {tasks.map(task => (
+//           <GantBar task={task}></GantBar>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
-export default GanttChartRight;
+// export default GanttChartRight;
