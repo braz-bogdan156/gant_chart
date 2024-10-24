@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './styles/GanttChart.css';
+import './styles/GanttChart.css'
 import { Task } from './types/types';
-import GanttGhartLeft from './components/GanttGhartLeft';
-import GanttChartRight from './components/GanttChartRight';
+
+import GantLine from './components/GantLine';
 
 type Props = {
     tasks: Task[];
+    
 }
 
 const GanttChart: React.FC<Props> = ({ tasks }) => {
@@ -27,10 +28,27 @@ const GanttChart: React.FC<Props> = ({ tasks }) => {
         setEndDate(new Date(maxDate));
     }, [tasks]);
 
+    const renderTask = (task: Task, startDate: Date, endDate: Date) => {
+        if (!task.children) {
+            return <GantLine key={task.id} task={task} startDate={startDate} endDate={endDate}></GantLine>
+        }
+    
+        return (
+            <GantLine key={task.id} task={task} hasChildren={true} startDate={startDate} endDate={endDate}>
+                {task.children.map((task) => renderTask(task, startDate, endDate))}
+            </GantLine>
+        )
+    }
+
     return (
         <div className="gantt-chart">
-            <GanttGhartLeft tasks={tasks} />
-            <GanttChartRight tasks={tasks} startDate={startDate} endDate={endDate} />
+            {/* <GantHeader startDate={startDate} endDate={endDate}></GantHeader> */}
+            {tasks.map(task => (
+                <>
+                    {tasks.map((task) => renderTask(task, startDate, endDate))}
+                </>
+            ))}
+            
         </div>
     );
 };

@@ -2,21 +2,19 @@
 
 export default function GantHeaderRightQvartals() {
   return (
-    <div className="gantt-Q">
-    <div>Q1</div>
-    <div>Q2</div>
-    <div>Q3</div>
-    <div>Q4</div>
-    <div>Q1</div>
-    <div>Q2</div>
-    <div>Q3</div>
-    <div>Q4</div>
-    <div>Q1</div>
-    <div>Q2</div>
-    <div>Q1</div>
-    <div>Q2</div>
-    <div>Q3</div>
-    <div>Q4</div>
-  </div>
+    <tr className="gantt-Q">
+    
+    <th>Q4</th>
+    <th colSpan={3}>Q1</th>
+    <th colSpan={3}>Q2</th>
+    <th colSpan={3}>Q3</th>
+    <th colSpan={3}>Q4</th>
+    <th colSpan={3}>Q1</th>
+    <th colSpan={3}>Q2</th>
+    <th colSpan={3}>Q3</th>
+    <th colSpan={3}>Q4</th>
+    
+    
+  </tr>
   )
 }

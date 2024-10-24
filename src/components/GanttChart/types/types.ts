@@ -9,5 +9,7 @@
 
     estimateHours: number;
     actualHours: number;
+
+    children?: Task[];
   }
   

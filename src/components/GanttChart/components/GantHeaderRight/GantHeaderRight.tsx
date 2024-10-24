@@ -1,15 +1,17 @@
+import GantHeaderRightMonths from "./GantHeaderRightMonths";
+import GantHeaderRightQvartals from "./GantHeaderRightQvartals";
+import GantHeaderRightYears from "./GantHeaderRightYears";
 
-import GantHeaderRightYears from './GantHeaderRightYears'
-import GantHeaderRightQvartals from './GantHeaderRightQvartals'
-import GantHeaderRightMonths from './GantHeaderRightMonths'
+
 
 export default function GantHeaderRight() {
   return (
-    <div className="gantt-timeline-header">
-          <GantHeaderRightYears></GantHeaderRightYears>
-          <GantHeaderRightQvartals></GantHeaderRightQvartals>
-          <GantHeaderRightMonths></GantHeaderRightMonths>
-        </div>
+    <table className="gantt-timeline-header" border={1}>
+
+      <GantHeaderRightYears></GantHeaderRightYears>
+      <GantHeaderRightQvartals></GantHeaderRightQvartals>
+      <GantHeaderRightMonths></GantHeaderRightMonths>
+    </table>
   )
 }
 

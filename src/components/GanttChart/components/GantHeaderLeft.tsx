@@ -4,11 +4,13 @@ import { useTranslation } from "react-i18next";
 export default function GantHeader() {
   const {t} = useTranslation();
   return (
-    <div className="gantt-header">
-          <div>{t("ganttChart.headerId")}</div>
-          <div>{t("ganttChart.headerName")}</div>
-          <div>{t("ganttChart.headerEstimateDuration")}</div>
-          <div>{t("ganttChart.headerActualDuration")}</div>
-        </div>
+    <tr className="gantt-header">
+      
+          <th className="gantt-header-id">{t("ganttChart.headerId")}</th>
+          <th  >{t("ganttChart.headerName")}</th>
+          <th >{t("ganttChart.headerEstimateDuration")}</th>
+          <th >{t("ganttChart.headerActualDuration")}</th>
+        
+        </tr>
   )
 }

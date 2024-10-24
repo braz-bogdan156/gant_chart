@@ -7,18 +7,27 @@ import GantHeaderLeft from './GantHeaderLeft';
 
 type GanttGhartLeftProps ={
     tasks: Task[];
+    
 }
 
  const GanttGhartLeft: React.FC<GanttGhartLeftProps> = ({tasks}) =>{
-
+  
 
   return (
-    <div className="gantt-left">
+    <table className="gantt-left" border={1} >
+      <thead>
         <GantHeaderLeft></GantHeaderLeft>
-        {tasks.map(task => (
+        </thead>
+        <tbody>
+          <>
+          
+          </>
+        {/* {tasks.map(task => (
           <GantLine key={task.id} task={task}></GantLine>
-        ))}
-      </div>
+          
+        ))} */}
+        </tbody>
+      </table>
   )
 }
 
