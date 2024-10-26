@@ -10,13 +10,12 @@ type GantHeaderRightProps = {
 };
 
 const GantHeaderRight: React.FC<GantHeaderRightProps> = ({ startDate, endDate }) => {
-  return (
-    <table className="gantt-timeline-header" border={1}>
-
-    <GantHeaderRightYears></GantHeaderRightYears>
-    <GantHeaderRightQvartals></GantHeaderRightQvartals>
-    <GantHeaderRightMonths></GantHeaderRightMonths>
-    </table>
+  return (    
+    <>
+      <GantHeaderRightYears></GantHeaderRightYears>
+      <GantHeaderRightQvartals></GantHeaderRightQvartals>
+      <GantHeaderRightMonths></GantHeaderRightMonths>
+    </>   
   );
 };
 

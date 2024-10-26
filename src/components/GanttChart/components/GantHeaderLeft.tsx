@@ -9,15 +9,12 @@ type GantHeaderLeftProps = {
 
 const GantHeaderLeft: React.FC<GantHeaderLeftProps> = ({ startDate, endDate }) => {
   const {t} = useTranslation();
-  return (
-    
-<tr className="gantt-header">
-      
-      <th className="gantt-header-id">{t("ganttChart.headerId")}</th>
-      <th  >{t("ganttChart.headerName")}</th>
-      <th >{t("ganttChart.headerEstimateDuration")}</th>
-      <th >{t("ganttChart.headerActualDuration")}</th>
-    
+  return (    
+    <tr className="gantt-header">      
+      <th>{t("ganttChart.headerId")}</th>
+      <th>{t("ganttChart.headerName")}</th>
+      <th>{t("ganttChart.headerEstimateDuration")}</th>
+      <th>{t("ganttChart.headerActualDuration")}</th>    
     </tr>
   );
 };

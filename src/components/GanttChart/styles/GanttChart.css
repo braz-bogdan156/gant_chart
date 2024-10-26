@@ -1,91 +1,56 @@
 .gantt-chart {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /* Левая колонка для таблицы, правая для диаграммы */
-    gap: 20px; /* Задаём расстояние между таблицей и графиками */
-    padding: 10px;
-  }
-  .gantt-left {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  /* .gantt-left {
-    display: grid;
-    grid-template-columns: 1fr 3fr 2fr 2fr; /* Разметка для колонок: ID, Name, Estimate, Actual */
-    /* gap: 10px;
-    padding: 10px; */
-  /* } */
-   */
-  .gantt-right-container {
-    overflow-x: auto; /* Додаємо горизонтальний скролл */
-  }
+  display: grid;
+  grid-template-columns: 2fr 3fr; 
+  gap: 20px; 
+  padding: 10px;
+}
 
-  .gantt-right {
-    display: grid;
-    grid-auto-rows: min-content; /* Каждая строка диаграммы будет иметь свою высоту */
-    gap: 10px; 
-    min-width: 1200px; /* Задаємо мінімальну ширину для горизонтального скролу */
-  }
+.gantt-table {
+  /* width: 100%; */
+  border-collapse: collapse;
+  table-layout: fixed; 
+}
 
-  .gantt-timeline-header {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  /* .gantt-timeline-header{
-    display: grid;
-    
-    
-  }
-  .gantt-timeline-years{
-    display: grid;
-    grid-template-columns: 1fr 13fr 5fr;
-   
-  }
-  .gantt-Q{
-   display: grid;
-   grid-template-columns: 1fr 3.5fr 3fr 3fr 3fr 3.1fr 1.5fr
-    
-  } */
-  /* .gantt-timeline-months{
-   display: flex;
-   justify-content: space-between;
-  } */
-  
-  .gantt-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    
-    padding: 10px;
-  }
-  .gantt-header-id{
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-  .gantt-row {
-    display: contents; /* Каждая строка данных будет занимать свою сетку */
-  }
+.gantt-header th{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.gantt-left {
+  display: grid; 
+  grid-template-columns: 1fr 3fr 2fr 2fr; 
+  padding: 10px;
+} 
+
+
+.gantt-row td{
+  padding-top: 10px;
+  padding-bottom: 10px;
  
-  .gantt-row div {
-    padding: 8px;
-    border-bottom: 1px solid #ccc; /* Разделитель для строк */
-  }
+}
+
+
+.gantt-bar-container {
+  display: flex; 
+  flex-direction: column;
+
+}
+
+.gantt-bar {
+  height: 20px;
   
-  .gantt-bar-container {
-    display: flex; 
-    flex-direction: column;
-  }
-  
-  .gantt-bar {
-    height: 20px;
-    margin-right: 10px;
-  }
-  
-  .gantt-bar.estimate {
-    background-color: #1f77b4;
-  }
-  
-  .gantt-bar.actual {
-    background-color: #ff7f0e;
-    height: 50%;
-  }
+}
+
+.gantt-bar.estimate {
+  background-color: #1f77b4;
+  margin-top: 20px;
+}
+
+.gantt-bar.actual {
+  background-color: #ff7f0e;
+  transform: scaleY(0.5);
+  transform-origin: top;
+}
+
+
+
+
