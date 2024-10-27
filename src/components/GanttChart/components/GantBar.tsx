@@ -1,30 +1,50 @@
 import React, { useState } from 'react';
 import { Task } from '../types/types';
-import { GantRenderTask } from './GantRenderTask';
-
-type GantBarProps = {
+import { format,eachMonthOfInterval } from "date-fns";
+type GantBarProps ={
   task: Task;
-  hasChildren?: boolean;
+  hasChildren?: boolean ;
   children?: React.ReactNode;
   startDate: Date;
-  endDate: Date;
-};
+  endDate: Date;  
+}
+const GantBar: React.FC<GantBarProps> = ({task, children,startDate, endDate}) =>{
+  const [isExpanded, setisExpanded] = React.useState(false);
+  
+  const months = eachMonthOfInterval({
+    start: new Date(Number(format(startDate,`yyy`))-1, Number(format(startDate,`MM`))-1, Number(format(startDate,`ddd`))),
+    end: new Date(Number(format(endDate ,`yyy`))+1, Number(format(endDate ,`MM`))-1, Number(format(endDate ,`ddd`)))
+  });
+  const estimateMonths = eachMonthOfInterval({
+    start: new Date(Number(format(task.estimateStartDate,`yyy`)), Number(format(task.estimateStartDate,`MM`))-1, Number(format(task.estimateStartDate,`ddd`))),
+    end: new Date(Number(format(task.estimateEndDate ,`yyy`)), Number(format(task.estimateEndDate ,`MM`))-1, Number(format(task.estimateEndDate,`ddd`)))
+  });
 
-const GantBar: React.FC<GantBarProps> = ({ task, children, startDate, endDate }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const createColor=():string=>{
+    var color:string ='white';    
+    months.map((i)=>{      
+      for(let j = 0; j < estimateMonths.length; j++)  {        
+        if (format(i,`yyy-MM`)===format(estimateMonths[j],`yyy-MM`)){
+          color=`#1f77b4`;          
+          return color          
+        }        
+      }       
+    })    
+    return color 
+  }
 
-  return (
+
+ 
+  return(   
     <>
-      <tr key={task.id} className="gantt-row-bar">
-        <div className="gantt-bar estimate" style={{ width: `${task.estimateHours * 2}px` }}></div>
-        <div className="gantt-bar actual" style={{ width: `${task.actualHours * 2}px` }}></div>
-      </tr>
+      <tr key={task.id} className="gantt-row">
+        {months.map((i,index)=><th 
+        style={{background:createColor()}} 
+        key={index}>{format(i,`yyy-MM`)}</th>)}                                 
+      </tr>      
       {isExpanded && children}
-      {isExpanded && task.children && task.children.map((childTask) => (
-        <GantRenderTask key={childTask.id} task={childTask} startDate={startDate} endDate={endDate} />
-      ))}
-    </>
-  );
-};
+    </>   
+  )
+}
 
 export default GantBar;
