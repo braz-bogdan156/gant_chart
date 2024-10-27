@@ -20,27 +20,28 @@ const GantBar: React.FC<GantBarProps> = ({task, children,startDate, endDate}) =>
     end: new Date(Number(format(task.estimateEndDate ,`yyy`)), Number(format(task.estimateEndDate ,`MM`))-1, Number(format(task.estimateEndDate,`ddd`)))
   });
 
-  const createColor=():string=>{
-    var color:string ='white';    
-    months.map((i)=>{      
-      for(let j = 0; j < estimateMonths.length; j++)  {        
-        if (format(i,`yyy-MM`)===format(estimateMonths[j],`yyy-MM`)){
-          color=`#1f77b4`;          
-          return color          
-        }        
-      }       
-    })    
-    return color 
+  const createColor = (currentMonth: Date): string => {
+    const start = new Date(Number(format(task.estimateStartDate, 'yyyy')), Number(format(task.estimateStartDate, 'MM')) - 1);
+    const end = new Date(Number(format(task.estimateEndDate, 'yyyy')), Number(format(task.estimateEndDate, 'MM')) - 1);
+  
+    if (currentMonth >= start && currentMonth <= end) {
+      return '#1f77b4'; // Синій колір
+    }
+  
+    return 'white'; // Стандартний колір
   }
-
-
  
   return(   
     <>
       <tr key={task.id} className="gantt-row">
-        {months.map((i,index)=><th 
-        style={{background:createColor()}} 
-        key={index}>{format(i,`yyy-MM`)}</th>)}                                 
+      {months.map((month, index) => (
+  <th 
+    style={{background: createColor(month)}} 
+    key={index}
+  >
+    {format(month, 'yyyy-MM')}
+  </th>
+))}                              
       </tr>      
       {isExpanded && children}
     </>   
