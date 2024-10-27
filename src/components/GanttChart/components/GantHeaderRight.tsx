@@ -1,4 +1,3 @@
-// import React from 'react';
 import { format,eachYearOfInterval,eachQuarterOfInterval,eachMonthOfInterval } from "date-fns";
 
 type GantHeaderRightProps = {
@@ -7,7 +6,6 @@ type GantHeaderRightProps = {
 };
 
 const GantHeaderRight: React.FC<GantHeaderRightProps> = ({ startDate, endDate }) => {
-
   const years = eachYearOfInterval({
     start: new Date(Number(format(startDate,`yyy`))-1, Number(format(startDate,`MM`)), Number(format(startDate,`ddd`))),
     end: new Date(Number(format(endDate ,`yyy`))+1, Number(format(endDate ,`MM`)), Number(format(endDate ,`ddd`)))
@@ -15,7 +13,7 @@ const GantHeaderRight: React.FC<GantHeaderRightProps> = ({ startDate, endDate })
 
   const quarters = eachQuarterOfInterval({
     start: new Date(Number(format(startDate,`yyy`))-1, Number(format(startDate,`MM`)), Number(format(startDate,`ddd`))),
-    end: new Date(Number(format(endDate ,`yyy`))+1, Number(format(endDate ,`MM`)), Number(format(endDate ,`ddd`)))
+    end: new Date(Number(format(endDate ,`yyy`))+1, Number(format(endDate ,`MM`))-1, Number(format(endDate ,`ddd`)))
   })
  
   const months = eachMonthOfInterval({
@@ -26,13 +24,13 @@ const GantHeaderRight: React.FC<GantHeaderRightProps> = ({ startDate, endDate })
   return (    
     <>
       <tr className="gantt-timeline-years" >
-        {years.map((i,index)=><th colSpan={12} key={index}>{format(i,`yyy`)}</th>)}       
+        {years.map((i,index)=><th   colSpan={12} key={index}>{format(i,`yyy`)}</th>)}       
       </tr>
       <tr className="gantt-Q" >        
-        {quarters.map((i,index)=><th colSpan={3} key={index}>{format(i,`qqq`)}</th>)}        
+        {quarters.map((i,index)=><th style={{padding:'5px'}}  colSpan={3} key={index}>{format(i,`qqq`)}</th>)}        
       </tr>
       <tr className="gantt-timeline-months" >        
-        {months.map((i,index)=><th key={index}>{format(i,`MM`)}</th>)}        
+        {months.map((i,index)=><th  key={index}>{format(i,`MM`)}</th>)}        
       </tr>      
     </>   
   );

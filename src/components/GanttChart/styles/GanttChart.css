@@ -2,21 +2,20 @@
   display: grid;
   grid-template-columns: 2fr 3fr; 
   gap: 20px; 
-  padding: 10px;
+  padding: 50px;
+  
 }
 
-.gantt-table-container{
-  overflow-x: auto;
-}
-.gantt-table { 
- 
+.gantt-table {  
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: fixed;  
+}
+.wrapp-table{
+  overflow-x: auto;
 }
 
 .gantt-header th{
-  padding-top: 30px;
-  padding-bottom: 30px;  
+  padding: 30px 0;  
 }
 .gantt-left {
   display: grid; 
@@ -31,24 +30,6 @@
 .gantt-row td{
   padding: 10px;
 }
-/* 
-.gantt-bar-container {
-  display: flex; 
-  flex-direction: column;
-}
-
-.gantt-bar {
-  height: 20px;
-  margin-right: 10px;
-}
-
-.gantt-bar.estimate {
-  background-color: #1f77b4;
-}
-
-.gantt-bar.actual {
-  background-color: #ff7f0e;  
-} */
 
 
 

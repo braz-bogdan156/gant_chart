@@ -13,3 +13,4 @@
     children?: Task[];
   }
   
+  export type f1 = () => void;

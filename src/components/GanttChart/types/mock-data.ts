@@ -6,28 +6,28 @@ export const tasks: Task[] = [
     estimateHours: 51.961, 
     actualHours: 83.527, 
     estimateStartDate: new Date('2022-01-01'), 
-    estimateEndDate: new Date('2022-03-01'), 
+    estimateEndDate: new Date('2022-08-01'), 
     actualStartDate: new Date('2022-01-02'), 
-    actualEndDate: new Date('2022-02-01'),
+    actualEndDate: new Date('2022-09-01'),
     children: [ {
       id: '1.1',
        name: 'Subtask 1.1', 
        estimateHours: 45.407, 
        actualHours: 30.208, 
-       estimateStartDate: new Date('2024-01-05'), 
-       estimateEndDate: new Date('2024-05-05'), 
-       actualStartDate: new Date('2024-01-05'), 
-       actualEndDate: new Date('2024-05-05'),
+       estimateStartDate: new Date('2022-01-05'), 
+       estimateEndDate: new Date('2022-08-05'), 
+       actualStartDate: new Date('2022-01-05'), 
+       actualEndDate: new Date('2022-09-05'),
        children: [
         {
           id: '1.1.1',
        name: 'Subtask 1.1.1', 
        estimateHours: 45.407, 
        actualHours: 30.208, 
-       estimateStartDate: new Date('2024-02-05'), 
-       estimateEndDate: new Date('2024-03-05'), 
-       actualStartDate: new Date('2024-02-05'), 
-       actualEndDate: new Date('2024-02-05')
+       estimateStartDate: new Date('2022-02-05'), 
+       estimateEndDate: new Date('2022-03-05'), 
+       actualStartDate: new Date('2022-02-05'), 
+       actualEndDate: new Date('2022-08-05')
         },
        ]
       },

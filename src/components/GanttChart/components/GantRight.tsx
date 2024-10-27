@@ -6,25 +6,26 @@ type Props = {
     tasks: Task[];
     startDate: Date;
     endDate: Date;
+    isExpanded:boolean
     
 }
-const GantRight: React.FC<Props> = ({tasks,startDate, endDate }) => { 
+const GantRight: React.FC<Props> = ({tasks,startDate, endDate,isExpanded}) => { 
     const renderBar = (task: Task, startDate: Date, endDate: Date) => {
         if (!task.children) {
-            return <GantBar key={task.id} task={task} startDate={startDate} endDate={endDate}></GantBar>
+            return <GantBar key={task.id} task={task} startDate={startDate} endDate={endDate} isExpanded={isExpanded}></GantBar>
         }
     
         return (
-            <GantBar key={task.id} task={task} hasChildren={true} startDate={startDate} endDate={endDate}>
+            <GantBar key={task.id} task={task}  startDate={startDate}  isExpanded={isExpanded} endDate={endDate}>
                 {task.children.map((task) => renderBar(task, startDate, endDate))}
             </GantBar>
         )
     }
     
     
-    return (  
-        <div className="gantt-table-container">   
-        <table className='gantt-table' border={1}>
+    return ( 
+        <div className='wrapp-table' >
+            <table className='gantt-table' border={1}>
             <thead>                
                 <GantHeaderRight startDate={startDate} endDate={endDate} />        
             </thead>
@@ -32,7 +33,7 @@ const GantRight: React.FC<Props> = ({tasks,startDate, endDate }) => {
                 {tasks.map((task) => renderBar(task, startDate, endDate))}               
             </tbody>
         </table>
-        </div>  
+        </div>         
     );    
 };
 

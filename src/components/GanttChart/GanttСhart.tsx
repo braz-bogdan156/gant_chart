@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Task } from './types/types';
 import GantLeft from './components/GantLeft';
-import './styles/GanttChart.css';
 import GantRight from './components/GantRight';
+import './styles/GanttChart.css';
 
 type Props = {
     tasks: Task[];    
@@ -11,6 +11,11 @@ type Props = {
 const GanttChart: React.FC<Props> = ({ tasks }) => {
     const [startDate, setStartDate] = useState<Date>(new Date());
     const [endDate, setEndDate] = useState<Date>(new Date());
+    const [isExpanded, setisExpanded] = React.useState(false);
+
+    const  onClickButton=()=>{
+        setisExpanded((prev) => !prev);        
+    }
 
     useEffect(() => {
         const minDate = tasks.reduce((acc, task) => {
@@ -27,11 +32,11 @@ const GanttChart: React.FC<Props> = ({ tasks }) => {
         setEndDate(new Date(maxDate));
     }, [tasks]);    
 
-    return (
+    return (        
         <div className='gantt-chart'>
-            <GantLeft startDate={startDate} endDate={endDate} tasks={tasks}/>
-            <GantRight startDate={startDate} endDate={endDate} tasks={tasks}/>  
-        </div>             
+            <GantLeft startDate={startDate} endDate={endDate} isExpanded={isExpanded} tasks={tasks}  onClickButton={onClickButton}/>
+            <GantRight startDate={startDate} endDate={endDate}  isExpanded={isExpanded} tasks={tasks}/>  
+        </div>                   
     );
 };
 
