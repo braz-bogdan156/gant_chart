@@ -22,7 +22,8 @@ const GantRight: React.FC<Props> = ({tasks,startDate, endDate }) => {
     }
     
     
-    return (       
+    return (  
+        <div className="gantt-table-container">   
         <table className='gantt-table' border={1}>
             <thead>                
                 <GantHeaderRight startDate={startDate} endDate={endDate} />        
@@ -31,7 +32,7 @@ const GantRight: React.FC<Props> = ({tasks,startDate, endDate }) => {
                 {tasks.map((task) => renderBar(task, startDate, endDate))}               
             </tbody>
         </table>
-           
+        </div>  
     );    
 };
 

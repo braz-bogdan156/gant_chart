@@ -5,7 +5,11 @@
   padding: 10px;
 }
 
-.gantt-table {  
+.gantt-table-container{
+  overflow-x: auto;
+}
+.gantt-table { 
+ 
   border-collapse: collapse;
   table-layout: fixed;
 }
