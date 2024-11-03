@@ -25,7 +25,7 @@ const GantLeft: React.FC<Props> = ({tasks,startDate, endDate ,isExpanded,onClick
     }
     return (           
         <div className='wrapp-table-right' >
-            <table className='gantt-table' border={1}>
+            <table className='gantt-table-left' border={1}>
                 <thead>                
                     <GantHeaderLeft startDate={startDate} endDate={endDate}/>               
                 </thead>
