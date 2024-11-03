@@ -24,14 +24,17 @@ const GantLeft: React.FC<Props> = ({tasks,startDate, endDate ,isExpanded,onClick
         )
     }
     return (           
-        <table className='gantt-table' border={1}>
-            <thead>                
-                <GantHeaderLeft startDate={startDate} endDate={endDate}/>               
-            </thead>
-            <tbody>                
-                {tasks.map((task) => renderTask(task, startDate, endDate))}
-            </tbody>
-        </table>           
+        <div className='wrapp-table-right' >
+            <table className='gantt-table' border={1}>
+                <thead>                
+                    <GantHeaderLeft startDate={startDate} endDate={endDate}/>               
+                </thead>
+                <tbody>                
+                    {tasks.map((task) => renderTask(task, startDate, endDate))}
+                </tbody>
+            </table>   
+        </div> 
+             
     );    
 };
 

@@ -23,13 +23,13 @@ const GantHeaderRight: React.FC<GantHeaderRightProps> = ({ startDate, endDate })
   
   return (    
     <>
-      <tr className="gantt-timeline-years" >
+      <tr className="gantt-header-right">
         {years.map((i,index)=><th   colSpan={12} key={index}>{format(i,`yyy`)}</th>)}       
       </tr>
-      <tr className="gantt-Q" >        
-        {quarters.map((i,index)=><th style={{padding:'5px'}}  colSpan={3} key={index}>{format(i,`qqq`)}</th>)}        
+      <tr className="gantt-header-right">        
+        {quarters.map((i,index)=><th  colSpan={3} key={index}>{format(i,`qqq`)}</th>)}        
       </tr>
-      <tr className="gantt-timeline-months" >        
+      <tr className="gantt-header-right">        
         {months.map((i,index)=><th  key={index}>{format(i,`MM`)}</th>)}        
       </tr>      
     </>   

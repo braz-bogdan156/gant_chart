@@ -24,8 +24,8 @@ const GantRight: React.FC<Props> = ({tasks,startDate, endDate,isExpanded}) => {
     
     
     return ( 
-        <div className='wrapp-table' >
-            <table className='gantt-table' border={1}>
+        <div className='wrapp-table-right' >
+            <table className='gantt-table-right' border={1}>
             <thead>                
                 <GantHeaderRight startDate={startDate} endDate={endDate} />        
             </thead>
