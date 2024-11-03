@@ -16,11 +16,11 @@
 
 .wrapp-table-right{
   overflow-x: scroll;
-    
+  
 }
 
 .gantt-header th{
-  padding: 25px 0; 
+  padding: 28px 0; 
 }
 
 .gantt-row td{
@@ -39,3 +39,4 @@
 .gantt-header-right th{
   border: 1px solid #000;
 }
+
