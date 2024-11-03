@@ -29,7 +29,7 @@ const GantRight: React.FC<Props> = ({tasks,startDate, endDate,isExpanded}) => {
             <thead>                
                 <GantHeaderRight startDate={startDate} endDate={endDate} />        
             </thead>
-            <tbody> 
+            <tbody className="gantt-table-right-body"> 
                 {tasks.map((task) => renderBar(task, startDate, endDate))}               
             </tbody>
         </table>
