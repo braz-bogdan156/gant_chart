@@ -1,4 +1,4 @@
-import './App.css';
+
 import GanttChart from './components/GanttChart/GanttСhart';
 import { tasks } from './components/GanttChart/types/mock-data';
 
